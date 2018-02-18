@@ -1,5 +1,5 @@
 const Gpio = require('onoff').Gpio
-const sensor = new Gpio(17, 'in', 'both')
+const sensor = new Gpio(4, 'in', 'both')
 // #A
 sensor.watch((err, value) => { // #B
   if (err) exit(err)
