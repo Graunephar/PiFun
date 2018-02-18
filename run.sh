@@ -11,4 +11,4 @@ cd "$(dirname "$0")"
 auto-install && npm install & #install dependencies
 
 #Start node js 
-node EasyBlink.js
+node readtemp.js
