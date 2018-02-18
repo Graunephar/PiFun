@@ -8,4 +8,4 @@ killall node #Kill every old instance of node
 cd "$(dirname "$0")"
 
 #Start node js 
-node readtemp.js
+node EasyBlink.js
