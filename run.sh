@@ -8,7 +8,7 @@ killall node #Kill every old instance of node
 cd "$(dirname "$0")"
 
 
-auto-install && npm install & #install dependencies
+npm install & #install dependencies from package.json (pro-tip use auto-install to keep this in sync)
 
 #Start node js 
 node readtemp.js
