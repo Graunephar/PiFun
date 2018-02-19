@@ -155,13 +155,13 @@ node blink.js #rename this if you want to run something else
 After the push has succeded the terminal will show the output from the Pi running the run.sh script.
 
 
-### A note on ther script
+### A note on the run script
 
-** Auto installation **
+**Auto installation**
 
 As you can see the script will try to run `npm install` to install any npm packages that are missing. This only works if you have an updated package.json file. You can see an example of this in the files above. The one in this repo will have onoff and node-dht-sensor as dependencies which means that they will auto install when npm install getx executed from the same firectory as the file. 
 
-** Removing output ** 
+**Removing output** 
 
 If you do not want to see the output from node you can make the a command run from a detached terminal by poistfixing it with &. If you change the last line of run.sh to `node blink.js &` you won't see any output from node.
 
