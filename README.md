@@ -14,9 +14,9 @@ This repository describes a demo done in the course ITWoT 2018
 
 3. Click in the termninal logo in the top bar of the screen, this will open a new terminal.
 
-3. From this terminal type in ´passwd´ this will start up a guide that helps you change the password on the Pi, you can read more about how that works [here](https://www.raspberrypi.org/documentation/configuration/security.md). Rememeber that the standard password is "raspberry" and the user name is pi
+3. From this terminal type in `passwd` this will start up a guide that helps you change the password on the Pi, you can read more about how that works [here](https://www.raspberrypi.org/documentation/configuration/security.md). Rememeber that the standard password is "raspberry" and the user name is pi
 
-3. From the same terminal run ´ifconfig´ to get you current IP adress. The output from ifconfig will look something like this:
+3. From the same terminal run `ifconfig` to get you current IP adress. The output from ifconfig will look something like this:
 
 
 ```bash
@@ -35,7 +35,7 @@ Look for the ip adress just after inet. In this case the current Ip adress is 19
 
 ### SSH connection to the pie
 
-1. From your own terminal run ´ssh <USERNAME>@<IP ADRESS>´. In this example that means the correct command is ´ssh pi@192.168.43.137´. This will establish a remote connection to the Pi. The Pi will ask for the password you have set in the beginning of this guide. After entering you password you will be connected to the Pi which means that whatever you type will run on the Pi, and the output you get is the output from the pi. This ins indicated by the ´pi@raspberrypi:~ $´ prefix you see in your terminal
+1. From your own terminal run `ssh <USERNAME>@<IP ADRESS>`. In this example that means the correct command is `ssh pi@192.168.43.137`. This will establish a remote connection to the Pi. The Pi will ask for the password you have set in the beginning of this guide. After entering you password you will be connected to the Pi which means that whatever you type will run on the Pi, and the output you get is the output from the pi. This ins indicated by the `pi@raspberrypi:~ $` prefix you see in your terminal
 
 ### SSH access without password.
 
@@ -53,7 +53,7 @@ exit #this closes the ssh session
 
 2. You have now aborted the connection to the Pi and are in you own terminal. Verify that this is correct by observing that the prefix mentioned before is not there.
 
-3. Run the following code from your own terminal: ´cat ~/.ssh/id_rsa.pub | ssh pi@<YOUR IP> 'cat >> .ssh/authorized_keys'´ In our example with he IP from before the commands looks like this.
+3. Run the following code from your own terminal: `cat ~/.ssh/id_rsa.pub | ssh pi@<YOUR IP> 'cat >> .ssh/authorized_keys'` In our example with he IP from before the commands looks like this.
 
 
 ```bash
@@ -63,7 +63,7 @@ cat ~/.ssh/id_rsa.pub | ssh pi@192.168.43.137 'cat >> .ssh/authorized_keys'
 4. Enter your password set in the beginning of this guide. 
 
 
-5. We have not successfully copied our own ssh key onto the Pi. Verify this by starting a new SSH connection with the command ´ssh <USERNAME>@<IP ADRESS>´. If we have been successfull the Pi will not ask for a password like it have done earlier. 
+5. We have not successfully copied our own ssh key onto the Pi. Verify this by starting a new SSH connection with the command `ssh <USERNAME>@<IP ADRESS>`. If we have been successfull the Pi will not ask for a password like it have done earlier. 
 
 We can now establish ssh connections without a password and can concentrate on pushing code to the Pi.
 
@@ -74,11 +74,11 @@ We can now establish ssh connections without a password and can concentrate on p
 We will now follow [this guide](https://github.com/Graunephar/Unstructured-TA-Pi-Demo-postdescription-itwot18) below is an adaptation of the commands:
 
 
-1. Establish an ssh connection to the Pi with the command ´ssh <USERNAME>@<IP ADRESS>´
+1. Establish an ssh connection to the Pi with the command `ssh <USERNAME>@<IP ADRESS>`
 
-2. From the terminal conmnected to the Pi via SSH, create a new folder for containing the code we will push later. For now we want it to be placed in the home folder and be called deploy. This is achieved by running this command 'mkdir ~/deploy´ the ´~´ character refers to the path to the home folder.
+2. From the terminal conmnected to the Pi via SSH, create a new folder for containing the code we will push later. For now we want it to be placed in the home folder and be called deploy. This is achieved by running this command 'mkdir ~/deploy` the `~` character refers to the path to the home folder.
 
-3. Create a new empty git repository for recieving our code later. This is done using this command ´git init --bare ~/project.git´
+3. Create a new empty git repository for recieving our code later. This is done using this command `git init --bare ~/project.git`
 
 4. A git project has socalled hooks which is scripts thar are automatically run when something changed. We want a new script that will run after new code has been pushed. Create a new hook in the git repo by using the text editor Nano nano is a basic editor that works from a terminal. This is done by running the following command. 
 
@@ -112,9 +112,9 @@ The script to paste into the post-receive file. The script is just a series of t
 
 
  
-6. Before the script can execute we need to mark it as executable. You do this by running the following command: ´chmod +x ~/project.git/hooks/post-receive´
+6. Before the script can execute we need to mark it as executable. You do this by running the following command: `chmod +x ~/project.git/hooks/post-receive`
 
-7. When you are finished exit the ssh session by running the command ´exit´
+7. When you are finished exit the ssh session by running the command `exit`
 
 ### Setting up git to push to the pie
 
@@ -122,9 +122,9 @@ The following steps should be executed on your own computer without an ssh conne
 
 1. Make a new git repositoty like you have done before and cd into the directory. You can set it up using the guide from gitlab as you have done earlier in the course. 
 
-2. We shall now add the Pi as a remote so we can push code directly onto it from git. This is done with the following command ´git remote add pi pi@<IP ADDRESS>:project.git´
+2. We shall now add the Pi as a remote so we can push code directly onto it from git. This is done with the following command `git remote add pi pi@<IP ADDRESS>:project.git`
 
-In the example with the IP from before the commands will be ´git remote add pi pi@192.168.43.137:project.git´
+In the example with the IP from before the commands will be `git remote add pi pi@192.168.43.137:project.git`
 
 This will add a new remote to git, just like gitlab is a remote. The name of the remote will be pi.
 
@@ -150,7 +150,7 @@ npm install #install dependencies from package.json (pro-tip use auto-install to
 node blink.js #rename this if you want to run something else
 ```
 
-4. You can now push to the Pi bu running the command ´git push pi master´ from your repository. This will push your code onto the Pi just like ´git push´ pushes the code to gitlab.
+4. You can now push to the Pi bu running the command `git push pi master` from your repository. This will push your code onto the Pi just like `git push` pushes the code to gitlab.
 
 After the push has succeded the terminal will show the output from the Pi running the run.sh script.
 
@@ -159,11 +159,11 @@ After the push has succeded the terminal will show the output from the Pi runnin
 
 ** Auto installation **
 
-As you can see the script will try to run ´npm install´ to install any npm packages that are missing. This only works if you have an updated package.json file. You can see an example of this in the files above. The one in this repo will have onoff and node-dht-sensor as dependencies which means that they will auto install when npm install getx executed from the same firectory as the file. 
+As you can see the script will try to run `npm install` to install any npm packages that are missing. This only works if you have an updated package.json file. You can see an example of this in the files above. The one in this repo will have onoff and node-dht-sensor as dependencies which means that they will auto install when npm install getx executed from the same firectory as the file. 
 
 ** Removing output ** 
 
-If you do not want to see the output from node you can make the a command run from a detached terminal by poistfixing it with &. If you change the last line of run.sh to ´node blink.js &´ you won't see any output from node.
+If you do not want to see the output from node you can make the a command run from a detached terminal by poistfixing it with &. If you change the last line of run.sh to `node blink.js &` you won't see any output from node.
 
 
 
