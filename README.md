@@ -33,15 +33,15 @@ Look for the ip adress just after inet. In this case the current Ip adress is 19
 
 ## The demo
 
-### SSH connection to the pie
+### SSH connection to the Pi
 
-1. From your own terminal run `ssh <USERNAME>@<IP ADRESS>`. In this example that means the correct command is `ssh pi@192.168.43.137`. This will establish a remote connection to the Pi. The Pi will ask for the password you have set in the beginning of this guide. After entering you password you will be connected to the Pi which means that whatever you type will run on the Pi, and the output you get is the output from the pi. This ins indicated by the `pi@raspberrypi:~ $` prefix you see in your terminal
+1. From your own terminal run `ssh <USERNAME>@<IP ADRESS>`. In this example that means the correct command is `ssh pi@192.168.43.137`. This will establish a remote connection to the Pi. The Pi will ask for the password you have set in the beginning of this guide. After entering you password you will be connected to the Pi which means that whatever you type will run on the Pi, and the output you get is the output from the pi. This is indicated by the `pi@raspberrypi:~ $` prefix you see in your terminal
 
 ### SSH access without password.
 
 In the following section we will use[this guide](https://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md). Below is an adapted description of the commands.
 
-1. From a terminal with SSH access (as established earlier run the two following command)
+1. From a terminal with SSH access (as established earlier). Run the two following command
 
 ```bash
 ssh-keygen -t rsa -C pi@pi #generate a new key
@@ -116,7 +116,7 @@ The script to paste into the post-receive file. The script is just a series of t
 
 7. When you are finished exit the ssh session by running the command `exit`
 
-### Setting up git to push to the pie
+### Setting up git to push to the Pi
 
 The following steps should be executed on your own computer without an ssh connection
 
