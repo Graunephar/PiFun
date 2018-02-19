@@ -19,7 +19,7 @@ This repository describes a demo done in the course ITWoT 2018
 3. From the same terminal run ´ifconfig´ to get you current IP adress. The output from ifconfig will look something like this:
 
 
-'''
+```bash
 wlan0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         inet 192.168.43.137  netmask 255.255.255.0  broadcast 192.168.43.255
         inet6 fe80::a784:3112:b706:205e  prefixlen 64  scopeid 0x20<link>
@@ -28,7 +28,7 @@ wlan0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         RX errors 0  dropped 0  overruns 0  frame 0
         TX packets 298  bytes 37791 (36.9 KiB)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-'''
+```
 Look for the ip adress just after inet. In this case the current Ip adress is 192.168.43.137
 
 ## The demo
@@ -43,12 +43,12 @@ In the following section we will use[this guide](https://www.raspberrypi.org/doc
 
 1. From a terminal with SSH access (as established earlier run the two following command)
 
-'''
+```bash
 ssh-keygen -t rsa -C pi@pi #generate a new key
 #Follow the guide (by pressing enter three times
 exit #this closes the ssh session
 
-'''
+```
 
 
 2. You have now aborted the connection to the Pi and are in you own terminal. Verify that this is correct by observing that the prefix mentioned before is not there.
@@ -56,9 +56,9 @@ exit #this closes the ssh session
 3. Run the following code from your own terminal: ´cat ~/.ssh/id_rsa.pub | ssh pi@<YOUR IP> 'cat >> .ssh/authorized_keys'´ In our example with he IP from before the commands looks like this.
 
 
-'''  
+```bash
 cat ~/.ssh/id_rsa.pub | ssh pi@192.168.43.137 'cat >> .ssh/authorized_keys'
-'''
+```
 
 4. Enter your password set in the beginning of this guide. 
 
@@ -82,15 +82,16 @@ We will now follow [this guide](https://github.com/Graunephar/Unstructured-TA-Pi
 
 4. A git project has socalled hooks which is scripts thar are automatically run when something changed. We want a new script that will run after new code has been pushed. Create a new hook in the git repo by using the text editor Nano nano is a basic editor that works from a terminal. This is done by running the following command. 
 
-'''
+```bash
 nano ~/project.git/hooks/post-receive
+```
 
 #This creates a file called post-recieve in the path /home/pi/project.git/hooks/ and opens the file in the Nano editor
 '''
 
 5. You will now find yourself in a very strange enviroment. Do not worry, it is just an editor. Although it is running through a terminal. Copy the script from below and paste it into nano using Ctrl+V. Save the file by pressing Ctrl + O and thereafter enter. Exit nano by pressing Ctrl + X.
 
-'''
+```bash
 #!/bin/bash
 while read oldrev newrev ref
 do
@@ -105,7 +106,7 @@ do
         echo "Ref $ref successfully received.  Doing nothing: only the master branch may be deployed on this server."
     fi
 done
-'''
+```
 
 The script to paste into the post-receive file. The script is just a series of terminal commands and a simple if statement.
 
@@ -129,7 +130,7 @@ This will add a new remote to git, just like gitlab is a remote. The name of the
 
 3. Put the code into your new git repository. Above this guide you will find the js files from the lecture and an example of a run.sh script. Add this files to git and commit the result. Just like you have done before. THe run.sh script is also shown below. This is the file that the post recieve hook that we have just setup is running.
 
-'''
+```bash
 #!/bin/bash
 
 #Naive and barebone startup script for node
@@ -147,8 +148,7 @@ npm install #install dependencies from package.json (pro-tip use auto-install to
 
 #Start node js
 node blink.js #rename this if you want to run something else
-
-'''
+```
 
 4. You can now push to the Pi bu running the command ´git push pi master´ from your repository. This will push your code onto the Pi just like ´git push´ pushes the code to gitlab.
 
