@@ -2,6 +2,8 @@
 
 #Naive and barebone startup script for node
 
+echo "Push recieved running script" #Print something so we know we have acess
+
 killall node #Kill every old instance of node
 
 #Goto working dir
