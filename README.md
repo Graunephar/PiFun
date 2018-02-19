@@ -76,9 +76,10 @@ We will now follow [this guide](https://github.com/Graunephar/Unstructured-TA-Pi
 
 1. Establish an ssh connection to the Pi with the command `ssh <USERNAME>@<IP ADRESS>`
 
-2. From the terminal conmnected to the Pi via SSH, create a new folder for containing the code we will push later. For now we want it to be placed in the home folder and be called deploy. This is achieved by running this command `mkdir ~/deploy`. The `~` character refers to the path to the home folder.
+2. From the terminal conmnected to the Pi via SSH, create a new folder for containing the code we will push later. For now we want it to be placed in the home folder and be called deploy. <br>
+This is achieved by running this command: `mkdir ~/deploy` . The ~  character refers to the path to the home folder.
 
-3. Create a new empty git repository for recieving our code later. This is done using this command `git init --bare ~/project.git`
+3. Create a new empty git repository for recieving our code later. <br> This is done using this command `git init --bare ~/project.git`
 
 4. A git project has socalled hooks which is scripts thar are automatically run when something changed. We want a new script that will run after new code has been pushed. Create a new hook in the git repo by using the text editor Nano nano is a basic editor that works from a terminal. This is done by running the following command. 
 
@@ -112,7 +113,7 @@ The script to paste into the post-receive file. The script is just a series of t
 
 
  
-6. Before the script can execute we need to mark it as executable. You do this by running the following command: `chmod +x ~/project.git/hooks/post-receive`
+6. Before the script can execute we need to mark it as executable. You do this by running the following command: <br> `chmod +x ~/project.git/hooks/post-receive`
 
 7. When you are finished exit the ssh session by running the command `exit`
 
