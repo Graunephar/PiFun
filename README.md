@@ -76,7 +76,7 @@ We will now follow [this guide](https://github.com/Graunephar/Unstructured-TA-Pi
 
 1. Establish an ssh connection to the Pi with the command `ssh <USERNAME>@<IP ADRESS>`
 
-2. From the terminal conmnected to the Pi via SSH, create a new folder for containing the code we will push later. For now we want it to be placed in the home folder and be called deploy. This is achieved by running this command 'mkdir ~/deploy` the `~` character refers to the path to the home folder.
+2. From the terminal conmnected to the Pi via SSH, create a new folder for containing the code we will push later. For now we want it to be placed in the home folder and be called deploy. This is achieved by running this command `mkdir ~/deploy`. The `~` character refers to the path to the home folder.
 
 3. Create a new empty git repository for recieving our code later. This is done using this command `git init --bare ~/project.git`
 
