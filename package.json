@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/Graunephar/Unstructured-TA-Pi-Demo-postdescription-itwot18/issues"
   },
-  "homepage": "https://github.com/Graunephar/Unstructured-TA-Pi-Demo-postdescription-itwot18#readme"
+  "homepage": "https://github.com/Graunephar/Unstructured-TA-Pi-Demo-postdescription-itwot18#readme",
+  "dependencies": {
+    "onoff": "^1.2.0",
+    "node-dht-sensor": "0.0.34"
+  }
 }
