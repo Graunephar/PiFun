@@ -148,7 +148,7 @@ cd "$(dirname "$0")"
 npm install #install dependencies from package.json (pro-tip use auto-install to keep this in sync)
 
 #Start node js
-node blink.js #rename this if you want to run something else
+npm start #rename this if you want to run something else
 ```
 
 4. You can now push to the Pi bu running the command `git push pi master` from your repository. This will push your code onto the Pi just like `git push` pushes the code to gitlab.
@@ -165,6 +165,9 @@ As you can see the script will try to run `npm install` to install any npm packa
 **Removing output** 
 
 If you do not want to see the output from node you can make the a command run from a detached terminal by poistfixing it with &. If you change the last line of run.sh to `node blink.js &` you won't see any output from node.
+
+**Running something that is not blink.js**
+If you want to run something else you should rename the value of the "start" key in package.json
 
 
 

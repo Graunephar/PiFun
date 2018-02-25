@@ -1,23 +1,21 @@
 {
-  "name": "pifun",
+  "name": "Unstructured-TA-Pi-Demo-postdescription-itwot18",
   "version": "1.0.0",
-  "description": "Dette er et test projekt med git og pi",
+  "description": "This repository describes a demo done in the course ITWoT 2018",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node blink.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Graunephar/PiFun.git"
+    "url": "git+https://github.com/Graunephar/Unstructured-TA-Pi-Demo-postdescription-itwot18.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Graunephar/PiFun/issues"
+    "url": "https://github.com/Graunephar/Unstructured-TA-Pi-Demo-postdescription-itwot18/issues"
   },
-  "homepage": "https://github.com/Graunephar/PiFun#readme",
-  "dependencies": {
-    "onoff": "^1.2.0",
-    "node-dht-sensor": "0.0.34"
-  }
+  "homepage": "https://github.com/Graunephar/Unstructured-TA-Pi-Demo-postdescription-itwot18#readme"
 }
