@@ -1,5 +1,5 @@
 const Gpio = require('onoff').Gpio // #A
-const led = new Gpio(22, 'out') // #17, 27, or 22 wired
+const led = new Gpio(4, 'out') // #17, 27, or 22 wired
 let interval
 interval = setInterval(() => { // #C
   let value = (led.readSync() + 1) % 2 // #D
